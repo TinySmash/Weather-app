@@ -87,7 +87,8 @@ function Main(){
                 <h3 className='index'>Rain <span className='value'>none</span></h3>
             </div>
             <div className="info" id='info2' >
-
+                <h1>soon</h1>
+                <h2>please get modified</h2>
             </div>
         </div>
 
