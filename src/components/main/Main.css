@@ -90,6 +90,26 @@
     position: relative;
     border: 2px solid black;
     border-radius: 5px;
-    width: 47%;
+    background-image: url('./images/info2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 46%;
     height: 92%;
+    padding-left: 10px;
+}
+
+.index
+{
+    font-size: 20px;
+    position: relative;
+    margin-top: 30px;
+    -webkit-text-stroke: 1.2px  black;
+    border-bottom: 1px dashed black;
+}
+
+.value
+{
+    position: absolute;
+    right: 10px;
 }
