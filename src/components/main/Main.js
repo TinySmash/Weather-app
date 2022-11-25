@@ -7,9 +7,12 @@ import img4 from "./images/info4.jpeg";
 import img5 from "./images/info5.png";
 import img6 from "./images/info6.jpg";
 import img7 from "./images/info7.jpeg";
+import { connect } from 'react-redux';
+import { getWeather } from '../../actions/weatherActions';
 
 
-function Main(){
+
+function Main(props){
     
 
     const [currentTime, setCurrentTime] = useState('');
@@ -51,16 +54,23 @@ function Main(){
             setCardBg([bg,scdBg]); 
             document.getElementById('info1').style.backgroundImage = `url(${cardBg[0]})`;
             document.getElementById('info2').style.backgroundImage = `url(${cardBg[1]})`;
-        }, 6000);
+        }, 12000);
     }
 
     useEffect(() => {
         updateBg();
     }, [cardBg])
 
+
+
     
-    //setInterval(console.log(cardBg), 10000);
-    //console.log(cardBg);
+    // TRYING THE API CALL
+
+    useEffect(() => {
+        props.getWeather();
+        console.log(props);
+    })
+    
     
     return (
         
@@ -97,5 +107,11 @@ function Main(){
 
 }
 
+const mapStateToProps = (state) => {
+    return {
+        weather : state.weather
+    }
+}
 
-export default Main;
+
+export default connect(mapStateToProps, { getWeather })(Main);
