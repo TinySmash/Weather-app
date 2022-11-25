@@ -60,16 +60,16 @@ function Main(props){
     useEffect(() => {
         updateBg();
     }, [cardBg])
-
-
-
+    
+    
+    
     
     // TRYING THE API CALL
-
+    
     useEffect(() => {
         props.getWeather();
-        console.log(props);
-    })
+
+    }, [])
     
     
     return (
