@@ -7,6 +7,7 @@ import img4 from "./images/info4.jpeg";
 import img5 from "./images/info5.png";
 import img6 from "./images/info6.jpg";
 import img7 from "./images/info7.jpeg";
+import searchImg from "./images/search.png";
 import { connect } from 'react-redux';
 import { getWeather } from '../../actions/weatherActions';
 
@@ -65,11 +66,18 @@ function Main(props){
     
     
     // TRYING THE API CALL
+
+
+    const cityInput = document.querySelector('.place-search');
+    let getCityWeather = (e) => {
+        e?.preventDefault();
+        props.getWeather(cityInput.value);
+    }
     
-    useEffect(() => {
+    /*useEffect(() => {
         props.getWeather();
 
-    }, [])
+    }, [])*/
     
     
     return (
@@ -77,8 +85,10 @@ function Main(props){
         <div className='homepage'>
 
         <h2 className="date">{currentTime.toString().slice(0,10)}, {currentTime.toString().slice(16,21)}</h2>
-        <input type="text" className="place-search" placeholder='search your city' />
-
+        <form action="" className="search-city">
+            <input type="text" className="place-search" placeholder='search your city'  />
+            <button className="search-btn" onClick={(e) => {getCityWeather(e)}}></button>
+        </form>
 
         <div className='overview'>
             <h2 className="overview-title">Overview</h2>

@@ -46,12 +46,21 @@
     top: 15px;
 }
 
+.search-city
+{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: 45px;
+    right: 5px;
+}
+
 .place-search
 {
     position: absolute;
-    right: 20px;
     top: 12px;
-    width: 50%;
+    width:76%;
     height: 35px;
     border: 1px solid black;
     border-radius: 8px;
@@ -59,6 +68,24 @@
     background: transparent;
     color: black;
     font-size: 20px;
+}
+
+
+.search-btn
+{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 2px;
+    top: 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-image: url('./images/search.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
 
 .place-search::placeholder
