@@ -123,8 +123,7 @@ function Main(props){
                 <h3 className='index'>Rain <span className='value' id="value4">none</span></h3>
             </div>
             <div className="info" id='info2' >
-                <h1>soon</h1>
-                <h2>please get modified</h2>
+                <h1 className='credits'>Done with OpenWeatherMap</h1>
             </div>
         </div>
 

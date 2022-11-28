@@ -96,15 +96,20 @@
 .overview-weather
 {
     position: absolute;
-    right: 5%;
+    right: 5px;
     top: 20px;
     color: rgb(68, 68, 68);
+    width: 40%;
+    display: flex;
+    justify-content: first baseline;
+    flex-direction:column;
 }
 
 .location
 {
-    position: relative;
-    margin-left: 30%;
+    position: static;
+    right: 2px;
+    float: left;
 }
 
 .info-container
@@ -145,4 +150,31 @@
 {
     position: absolute;
     right: 10px;
+}
+
+.credits
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+@media screen and (max-width : 560px){
+    body
+    {
+        height: 150vh;
+    }
+    .info-container
+    {
+        height: 495px;
+        display: flex;
+        flex-direction: column;
+    }
+    .info
+    {
+        margin-top: 20px;
+        width: 70%;
+    }
 }
