@@ -4,7 +4,12 @@ export const getWeather = (city) =>async dispatch => {
     .then(res => res.json())
     .then(data => {
         console.log(data);
-        return weather = {
+        document.querySelector('.place-weather').innerText = `${data.weather?.[0].description}, ${((data.main.temp) - 273.15).toFixed(2)} °C`;
+        document.querySelector('.country').innerText = data.sys.country;
+        document.querySelector('#value1').innerText = data.weather?.[0].description;
+        document.querySelector('#value2').innerText = `${((data.main.temp_min) - 273.15).toFixed(2)}°C /${((data.main.temp_max) - 273.15).toFixed(2)}°C `;
+        document.querySelector('#value3').innerText = `${((data.wind.speed)*3.6).toFixed(1)} km/h`;
+        return weather ={
             location : city,
             status : data.weather?.[0].description,
             avgTemp : ((data.main.temp) - 273.15).toFixed(2),

@@ -90,8 +90,7 @@ function Main(props){
         e?.preventDefault();
         props.getWeather(cityInput.value);
         setCurrentWeather(props.weather.weather);
-        console.log(props.weather);
-        console.log(currentWeather);
+        document.querySelector('.city-name').innerText = cityInput.value.charAt(0).toUpperCase() + cityInput.value?.slice(1);
     }
     
     
@@ -111,17 +110,17 @@ function Main(props){
             <h2 className="overview-title">Overview</h2>
             <h1 className="quote">Check how the weather <br />is going in your place</h1>
             <div className='overview-weather'>
-                <h1 className="location">{currentWeather?.location}</h1>
-                <h2 className="place-weather">{currentWeather?.status}, {currentWeather?.avgTemp} °C</h2>
+                <h1 className='location'><span className="city-name"></span>,<span className="country"></span></h1>
+                <h2 className="place-weather"></h2>
             </div>
         </div>
 
         <div className='info-container'>
             <div className="info" id='info1' >
-                <h3 className='index'>status <span className='value'>{currentWeather?.status}</span></h3>
-                <h3 className='index'>Temp <span className='value'>{currentWeather?.minTemp}°C / {currentWeather?.maxTemp}°C</span></h3>
-                <h3 className='index'>Wind <span className='value'>{currentWeather?.windSpeed}km/h</span></h3>
-                <h3 className='index'>Rain <span className='value'>none</span></h3>
+                <h3 className='index'>status <span className='value' id="value1"></span></h3>
+                <h3 className='index'>Temp <span className='value' id="value2"></span></h3>
+                <h3 className='index'>Wind <span className='value' id="value3"></span></h3>
+                <h3 className='index'>Rain <span className='value' id="value4">none</span></h3>
             </div>
             <div className="info" id='info2' >
                 <h1>soon</h1>
