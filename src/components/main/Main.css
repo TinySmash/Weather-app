@@ -101,6 +101,12 @@
     color: rgb(68, 68, 68);
 }
 
+.location
+{
+    position: relative;
+    margin-left: 30%;
+}
+
 .info-container
 {
     display: flex;

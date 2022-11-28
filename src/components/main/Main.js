@@ -13,11 +13,26 @@ import { getWeather } from '../../actions/weatherActions';
 
 
 
+
+
+
 function Main(props){
     
 
     const [currentTime, setCurrentTime] = useState('');
     const [cardBg, setCardBg] = useState([img1, img2]);
+    const [currentWeather,setCurrentWeather] = useState({
+        location : '',
+        status : '',
+        avgTemp : '',
+        maxTemp: '',
+        minTemp : '',
+        windSpeed: '',
+
+    })
+
+
+
     const card1 = document.getElementById('info1');
     const card2 = document.getElementById('info2');
 
@@ -68,16 +83,18 @@ function Main(props){
     // TRYING THE API CALL
 
 
+
+
     const cityInput = document.querySelector('.place-search');
-    let getCityWeather = (e) => {
+    let getCityWeather = async (e) => {
         e?.preventDefault();
         props.getWeather(cityInput.value);
+        setCurrentWeather(props.weather.weather);
+        console.log(props.weather);
+        console.log(currentWeather);
     }
     
-    /*useEffect(() => {
-        props.getWeather();
-
-    }, [])*/
+    
     
     
     return (
@@ -94,16 +111,16 @@ function Main(props){
             <h2 className="overview-title">Overview</h2>
             <h1 className="quote">Check how the weather <br />is going in your place</h1>
             <div className='overview-weather'>
-                <h1 className="place">Berlin, Germany</h1>
-                <h2 className="place-weather">Sunny, 28°</h2>
+                <h1 className="location">{currentWeather?.location}</h1>
+                <h2 className="place-weather">{currentWeather?.status}, {currentWeather?.avgTemp} °C</h2>
             </div>
         </div>
 
         <div className='info-container'>
             <div className="info" id='info1' >
-                <h3 className='index'>status <span className='value'>Sunny</span></h3>
-                <h3 className='index'>Temp <span className='value'>18°-32°</span></h3>
-                <h3 className='index'>Wind <span className='value'>22 km/h</span></h3>
+                <h3 className='index'>status <span className='value'>{currentWeather?.status}</span></h3>
+                <h3 className='index'>Temp <span className='value'>{currentWeather?.minTemp}°C / {currentWeather?.maxTemp}°C</span></h3>
+                <h3 className='index'>Wind <span className='value'>{currentWeather?.windSpeed}km/h</span></h3>
                 <h3 className='index'>Rain <span className='value'>none</span></h3>
             </div>
             <div className="info" id='info2' >
