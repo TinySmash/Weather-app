@@ -100,34 +100,34 @@ function Main(props){
         
         <div className='homepage'>
 
-        <h2 className="date">{currentTime.toString().slice(0,10)}, {currentTime.toString().slice(16,21)}</h2>
-        <form action="" className="search-city">
-            <input type="text" className="place-search" placeholder='search your city'  />
-            <button className="search-btn" onClick={(e) => {getCityWeather(e)}}></button>
-        </form>
+            <h2 className="date">{currentTime.toString().slice(0,10)}, {currentTime.toString().slice(16,21)}</h2>
+            <form action="" className="search-city">
+                <input type="text" className="place-search" placeholder='search your city'  />
+                <button className="search-btn" onClick={(e) => {getCityWeather(e)}}></button>
+            </form>
 
-        <div className='overview'>
-            <h2 className="overview-title">Overview</h2>
-            <h1 className="quote">Check how the weather <br />is going in your place</h1>
-            <div className='overview-weather'>
-                <h1 className='location'><span className="city-name"></span>,<span className="country"></span></h1>
-                <h2 className="place-weather"></h2>
+            <div className='overview'>
+                <h2 className="overview-title">Overview</h2>
+                <h1 className="quote">Check how the weather <br />is going in your place</h1>
+                <div className='overview-weather'>
+                    <h1 className='location'><span className="city-name"></span><span className="country"></span></h1>
+                    <h2 className="place-weather"></h2>
+                </div>
             </div>
+
+            <div className='info-container'>
+                <div className="info" id='info1' >
+                    <h3 className='index'>status <span className='value' id="value1"></span></h3>
+                    <h3 className='index'>Temp <span className='value' id="value2"></span></h3>
+                    <h3 className='index'>Wind <span className='value' id="value3"></span></h3>
+                    <h3 className='index'>Rain <span className='value' id="value4">none</span></h3>
+                </div>
+                <div className="info" id='info2' >
+                    <h1 className='credits'>Done with OpenWeatherMap</h1>
+                </div>
+            </div>
+
         </div>
-
-        <div className='info-container'>
-            <div className="info" id='info1' >
-                <h3 className='index'>status <span className='value' id="value1"></span></h3>
-                <h3 className='index'>Temp <span className='value' id="value2"></span></h3>
-                <h3 className='index'>Wind <span className='value' id="value3"></span></h3>
-                <h3 className='index'>Rain <span className='value' id="value4">none</span></h3>
-            </div>
-            <div className="info" id='info2' >
-                <h1 className='credits'>Done with OpenWeatherMap</h1>
-            </div>
-        </div>
-
-    </div>
     )
 
 }
