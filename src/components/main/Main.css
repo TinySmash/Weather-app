@@ -177,4 +177,23 @@
         margin-top: 20px;
         width: 70%;
     }
+    .overview-title
+    {
+        display: none;
+    }
+    .quote
+    {
+        display: none;
+    }
+    .overview
+    {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .overview-weather
+    {
+        position: relative;
+        width: 100%;
+    }
 }
